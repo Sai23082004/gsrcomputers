@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GSR Computers - Professional Courses</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #1995AD;
+      --secondary: #A1D6E2;
+      --accent: #F1F1F2;
+      --light: #ffffff;
+      --dark: #0f172a;
+      --gradient-primary: linear-gradient(135deg, #1995AD, #0a6d81);
+      --gradient-secondary: linear-gradient(135deg, #A1D6E2, #7fc0d0);
+      --gradient-accent: linear-gradient(135deg, #F1F1F2, #d9d9d9);
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+      background: var(--accent);
+      color: var(--dark);
+      scroll-behavior: smooth;
+    }
+
+    /* Navbar Styles */
+    .navbar {
+      background: var(--gradient-primary);
+      padding: 15px 20px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      animation: fadeInDown 0.8s ease-out;
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      animation: pulse 2s infinite;
+    }
+
+    .logo-icon {
+      width: 50px;
+      height: 50px;
+      background: var(--light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+      margin-right: 15px;
+    }
+
+    .logo-icon i {
+      font-size: 24px;
+      color: var(--primary);
+    }
+
+    .company-name {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2.5rem;
+      color: #ffffff;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+
+    .company-name:hover {
+      transform: scale(1.05);
+    }
+
+    .company-name::before,
+    .company-name::after {
+      content: '✦';
+      color: #ffd700;
+      font-size: 1.5rem;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      animation: spin 4s linear infinite;
+    }
+
+    .company-name::before {
+      left: -30px;
+    }
+
+    .company-name::after {
+      right: -30px;
+    }
+
+    .nav-links {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: #ffffff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      position: relative;
+      padding: 8px 0;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: var(--secondary);
+      transform: translateY(-3px);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: var(--secondary);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* Main Banner Section */
+    .main-content {
+      display: flex;
+      max-width: 100%;
+      height: 40vh;
+      margin: 0;
+      margin-top: 110px;
+      gap: 0;
+      animation: fadeIn 1s ease-out;
+    }
+
+    .banner-section {
+      flex: 0 0 70%;
+      background: var(--gradient-primary);
+      background-size: cover;
+      background-position: center;
+      padding: 30px;
+      text-align: center;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .banner-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, rgba(25, 149, 173, 0.8), rgba(10, 109, 129, 0.8));
+      z-index: 1;
+    }
+
+    .banner-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .banner-section h2 {
+      font-size: 2.5rem;
+      color: #ffffff;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+      animation: slideInLeft 1s ease-out;
+    }
+
+    .banner-section p {
+      font-size: 1.2rem;
+      color: #ffffff;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+      margin-bottom: 25px;
+      animation: slideInRight 1s ease-out;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 12px 30px;
+      background: var(--gradient-secondary);
+      color: var(--dark);
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 15px rgba(161, 214, 226, 0.4);
+      transition: all 0.3s ease;
+      animation: pulse 2s infinite;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 6px 20px rgba(161, 214, 226, 0.6);
+    }
+
+    .person-section {
+      flex: 0 0 30%;
+      text-align: center;
+      background: var(--gradient-secondary);
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .person-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, rgba(161, 214, 226, 0.8), rgba(127, 192, 208, 0.8));
+      z-index: 1;
+    }
+
+    .person-section img {
+      width: 100%;
+      max-width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Courses Section */
+    .courses-section {
+      padding: 80px 20px;
+      background: var(--accent);
+      position: relative;
+    }
+
+    .courses-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://www.transparenttextures.com/patterns/cubes.png');
+      opacity: 0.1;
+      z-index: -1;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .section-header h2 {
+      font-size: 2.8rem;
+      color: var(--primary);
+      margin-bottom: 15px;
+      font-weight: 700;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-header h2::after {
+      content: '';
+      width: 80px;
+      height: 5px;
+      background: var(--secondary);
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 5px;
+      animation: lineGrow 1s ease-out;
+    }
+
+    .section-header p {
+      font-size: 1.2rem;
+      color: #4b5563;
+      max-width: 700px;
+      margin: 20px auto 0;
+      line-height: 1.6;
+    }
+
+    .courses-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .course-card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      text-align: center;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      border: 1px solid #e5e7eb;
+      animation: fadeInUp 1s ease-out forwards;
+      opacity: 0;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .course-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: var(--gradient-secondary);
+      z-index: 2;
+    }
+
+    .course-card:nth-child(1) { animation-delay: 0.2s; }
+    .course-card:nth-child(2) { animation-delay: 0.4s; }
+    .course-card:nth-child(3) { animation-delay: 0.6s; }
+
+    .course-card:hover {
+      transform: translateY(-15px) scale(1.02);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .course-logo {
+      margin-bottom: 25px;
+      position: relative;
+    }
+
+    .course-logo .icon-wrapper {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto;
+      background: var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .course-logo .icon-wrapper::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 70%);
+      transform: rotate(45deg);
+    }
+
+    .course-logo img {
+      width: 60px;
+      height: 60px;
+      transition: transform 0.4s ease;
+    }
+
+    .course-card:hover .course-logo img {
+      transform: rotate(10deg) scale(1.1);
+    }
+
+    .course-info {
+      margin-bottom: 25px;
+    }
+
+    .course-info h3 {
+      font-size: 1.8rem;
+      color: var(--primary);
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    .course-info p {
+      font-size: 1rem;
+      color: #4b5563;
+      margin: 8px 0;
+      line-height: 1.5;
+    }
+
+    .duration {
+      display: inline-block;
+      background: rgba(25, 149, 173, 0.1);
+      color: var(--primary);
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-weight: 500;
+      margin-top: 5px;
+    }
+
+    .course-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .course-buttons button, .syllabus-btn {
+      padding: 12px 25px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .course-buttons button:hover, .syllabus-btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .enroll-btn {
+      background: var(--gradient-primary);
+      color: #ffffff;
+      box-shadow: 0 4px 15px rgba(25, 149, 173, 0.4);
+    }
+
+    .enroll-btn:hover {
+      background: linear-gradient(135deg, #147a8f, #1995AD);
+      box-shadow: 0 6px 20px rgba(25, 149, 173, 0.6);
+    }
+
+    .share-btn {
+      background: var(--accent);
+      color: var(--dark);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .share-btn:hover {
+      background: #d9d9d9;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .syllabus-btn {
+      display: block;
+      margin: 0 auto;
+      background: var(--gradient-secondary);
+      color: var(--dark);
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(161, 214, 226, 0.4);
+    }
+
+    .syllabus-btn:hover {
+      background: linear-gradient(135deg, #8ecbd9, #A1D6E2);
+      box-shadow: 0 6px 20px rgba(161, 214, 226, 0.6);
+    }
+
+    /* Testimonials Section */
+    .testimonials-section {
+      padding: 80px 20px;
+      background: var(--light);
+      text-align: center;
+    }
+
+    .testimonials-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 1400px;
+      margin: 40px auto 0;
+    }
+
+    .testimonial-card {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      text-align: left;
+      position: relative;
+      transition: transform 0.3s ease;
+      border: 1px solid #e5e7eb;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 5rem;
+      color: var(--secondary);
+      opacity: 0.2;
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+
+    .testimonial-content {
+      padding: 20px 0 25px 0;
+      font-size: 1rem;
+      color: #4b5563;
+      line-height: 1.7;
+      position: relative;
+      z-index: 2;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      border-top: 1px solid #e5e7eb;
+      padding-top: 20px;
+    }
+
+    .author-img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 15px;
+      border: 3px solid var(--secondary);
+    }
+
+    .author-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .author-info h4 {
+      color: var(--primary);
+      margin-bottom: 5px;
+    }
+
+    .author-info p {
+      color: #64748b;
+      font-size: 0.9rem;
+    }
+
+    .rating {
+      color: #ffc107;
+      margin: 10px 0;
+      font-size: 1.1rem;
+    }
+
+    /* Explore Courses Button Section */
+    .explore-courses-section {
+      text-align: center;
+      padding: 40px 20px;
+      background: var(--accent);
+    }
+
+    .explore-courses-btn {
+      display: inline-block;
+      padding: 15px 40px;
+      background: var(--gradient-primary);
+      color: white;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 15px rgba(25, 149, 173, 0.4);
+      transition: all 0.3s ease;
+      animation: pulse 2s infinite;
+    }
+
+    .explore-courses-btn:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 6px 20px rgba(25, 149, 173, 0.6);
+      background: linear-gradient(135deg, #147a8f, #1995AD);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--gradient-primary);
+      color: white;
+      padding: 50px 20px 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      text-align: left;
+    }
+
+    .footer-column h3 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .footer-column h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: var(--secondary);
+    }
+
+    .footer-column p, .footer-column a {
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 15px;
+      display: block;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .footer-column a:hover {
+      color: var(--secondary);
+      transform: translateX(5px);
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .social-icons a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      background: var(--secondary);
+      transform: translateY(-5px);
+    }
+
+    .copyright {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: center;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(161, 214, 226, 0.7);
+      }
+      70% {
+        transform: scale(1.02);
+        box-shadow: 0 0 0 12px rgba(161, 214, 226, 0);
+      }
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(161, 214, 226, 0);
+      }
+    }
+
+    @keyframes spin {
+      from {
+        transform: translateY(-50%) rotate(0deg);
+      }
+      to {
+        transform: translateY(-50%) rotate(360deg);
+      }
+    }
+
+    @keyframes lineGrow {
+      from {
+        width: 0;
+      }
+      to {
+        width: 80px;
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .main-content {
+        flex-direction: column;
+        height: auto;
+      }
+      
+      .banner-section, .person-section {
+        flex: 0 0 100%;
+        height: 300px;
+      }
+      
+      .person-section {
+        height: 250px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .company-name {
+        font-size: 2rem;
+      }
+      
+      .company-name::before {
+        left: -25px;
+      }
+      
+      .company-name::after {
+        right: -25px;
+      }
+      
+      .nav-container {
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      .section-header h2 {
+        font-size: 2.2rem;
+      }
+      
+      .banner-section h2 {
+        font-size: 2rem;
+      }
+      
+      .banner-section p {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .course-card {
+        padding: 20px;
+      }
+      
+      .course-logo .icon-wrapper {
+        width: 80px;
+        height: 80px;
+      }
+      
+      .course-logo img {
+        width: 50px;
+        height: 50px;
+      }
+      
+      .course-info h3 {
+        font-size: 1.5rem;
+      }
+      
+      .course-buttons {
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .course-buttons button, .syllabus-btn {
+        width: 100%;
+      }
+      
+      .testimonial-card {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <div class="logo-icon">
+          <i class="fas fa-laptop-code"></i>
+        </div>
+        <h1 class="company-name">GSR Computers</h1>
+      </div>
+      <div class="nav-links">
+        <a href="#home"><i class="fas fa-home"></i> Home</a>
+        <a href="#courses"><i class="fas fa-graduation-cap"></i> Courses</a>
+        <a href="#testimonials"><i class="fas fa-star"></i> Testimonials</a>
+        <a href="#laptops"><i class="fas fa-laptop"></i> Laptops</a>
+        <a href="#about"><i class="fas fa-info-circle"></i> About</a>
+        <a href="#contact"><i class="fas fa-phone-alt"></i> Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="main-content" id="home">
+    <div class="banner-section">
+      <div class="banner-content">
+        <h2>Welcome to GSR Computers</h2>
+        <p>Discover the best in tech education and high-quality laptops for all your needs</p>
+        <a href="#courses" class="cta-button">Explore Courses</a>
+      </div>
+    </div>
+    <div class="person-section">
+      <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Computer Expert">
+    </div>
+  </div>
+
+  <section class="courses-section" id="courses">
+    <div class="section-header">
+      <h2>Explore Our Courses</h2>
+      <p>Comprehensive programs taught by industry experts to kickstart your tech career</p>
+    </div>
+    <div class="courses-container">
+      <div class="course-card">
+        <div class="course-logo">
+          <div class="icon-wrapper">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/C_Programming_Language.svg" alt="C Programming Course Logo">
+          </div>
+        </div>
+        <div class="course-info">
+          <h3>C Programming</h3>
+          <p><i class="fas fa-user-tie"></i> Professor: Dr. Michael Brown</p>
+          <p><i class="fas fa-book"></i> Foundation of Computer Science</p>
+          <span class="duration"><i class="fas fa-clock"></i> 2 Months</span>
+        </div>
+        <div class="course-buttons">
+          <button class="enroll-btn"><i class="fas fa-user-plus"></i> Enroll Now</button>
+          <button class="share-btn"><i class="fas fa-share-alt"></i> Share</button>
+        </div>
+        <a href="./letter.pdf" target="_blank" class="syllabus-btn"><i class="fas fa-file-alt"></i> View Syllabus</a>
+      </div>
+      <div class="course-card">
+        <div class="course-logo">
+          <div class="icon-wrapper">
+            <img src="https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg" alt="Java Programming Course Logo">
+          </div>
+        </div>
+        <div class="course-info">
+          <h3>Java Programming</h3>
+          <p><i class="fas fa-user-tie"></i> Professor: Dr. John Smith</p>
+          <p><i class="fas fa-book"></i> Object-Oriented Mastery</p>
+          <span class="duration"><i class="fas fa-clock"></i> 3 Months</span>
+        </div>
+        <div class="course-buttons">
+          <button class="enroll-btn"><i class="fas fa-user-plus"></i> Enroll Now</button>
+          <button class="share-btn"><i class="fas fa-share-alt"></i> Share</button>
+        </div>
+        <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" target="_blank" class="syllabus-btn"><i class="fas fa-file-alt"></i> View Syllabus</a>
+      </div>
+      <div class="course-card">
+        <div class="course-logo">
+          <div class="icon-wrapper">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python Programming Course Logo">
+          </div>
+        </div>
+        <div class="course-info">
+          <h3>Python Programming</h3>
+          <p><i class="fas fa-user-tie"></i> Professor: Prof. Emily Davis</p>
+          <p><i class="fas fa-book"></i> Versatile & Powerful</p>
+          <span class="duration"><i class="fas fa-clock"></i> 4 Months</span>
+        </div>
+        <div class="course-buttons">
+          <button class="enroll-btn"><i class="fas fa-user-plus"></i> Enroll Now</button>
+          <button class="share-btn"><i class="fas fa-share-alt"></i> Share</button>
+        </div>
+        <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" target="_blank" class="syllabus-btn"><i class="fas fa-file-alt"></i> View Syllabus</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials-section" id="testimonials">
+    <div class="section-header">
+      <h2>Student Testimonials</h2>
+      <p>Hear from our successful students and alumni</p>
+    </div>
+    <div class="testimonials-container">
+      <div class="testimonial-card">
+        <div class="rating">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <div class="testimonial-content">
+          The C programming course completely transformed my understanding of computer science fundamentals. The instructors are incredibly knowledgeable and patient. I landed my first developer job just 2 months after completing this course!
+        </div>
+        <div class="testimonial-author">
+          <div class="author-img">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Student">
+          </div>
+          <div class="author-info">
+            <h4>Robert Johnson</h4>
+            <p>C Programming Graduate</p>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="rating">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star-half-alt"></i>
+        </div>
+        <div class="testimonial-content">
+          The Java course at GSR Computers exceeded my expectations. The hands-on projects and real-world examples helped me build a strong portfolio. The career services team also helped me prepare for interviews and negotiate my first job offer.
+        </div>
+        <div class="testimonial-author">
+          <div class="author-img">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Student">
+          </div>
+          <div class="author-info">
+            <h4>Sarah Williams</h4>
+            <p>Java Programming Graduate</p>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="rating">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <div class="testimonial-content">
+          As a career-changer, I was nervous about switching to tech. The Python course provided the perfect foundation. The instructors break down complex concepts into manageable pieces, and the community support is amazing. Highly recommend!
+        </div>
+        <div class="testimonial-author">
+          <div class="author-img">
+            <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Student">
+          </div>
+          <div class="author-info">
+            <h4>David Chen</h4>
+            <p>Python Programming Graduate</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="explore-courses-section">
+    <a href="courses.html" class="explore-courses-btn">Explore More Courses</a>
+  </section>
+
+  <footer id="contact">
+    <div class="footer-content">
+      <div class="footer-column">
+        <h3>About GSR</h3>
+        <p>GSR Computers has been providing quality tech education and solutions since 2005. We're committed to empowering students with cutting-edge skills.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <a href="#home"><i class="fas fa-chevron-right"></i> Home</a>
+        <a href="#courses"><i class="fas fa-chevron-right"></i> Courses</a>
+        <a href="#testimonials"><i class="fas fa-chevron-right"></i> Testimonials</a>
+        <a href="#laptops"><i class="fas fa-chevron-right"></i> Laptops</a>
+        <a href="#about"><i class="fas fa-chevron-right"></i> About Us</a>
+        <a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a>
+      </div>
+      <div class="footer-column">
+        <h3>Contact Us</h3>
+        <p><i class="fas fa-map-marker-alt"></i> 123 Tech Park, Silicon Valley</p>
+        <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+        <p><i class="fas fa-envelope"></i> info@gsrcomputers.com</p>
+        <p><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 6:00 PM</p>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>© 2023 GSR Computers. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Navigation smooth scrolling
+    document.querySelectorAll('.nav-links a, .cta-button').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        if (this.getAttribute('href').startsWith('#')) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href').substring(1);
+          const targetElement = document.getElementById(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: 'smooth'
+            });
+          }
+        }
+      });
+    });
+
+    // Course card animations on scroll
+    const courseCards = document.querySelectorAll('.course-card');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animation = 'fadeInUp 1s ease-out forwards';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    courseCards.forEach(card => {
+      observer.observe(card);
+    });
+
+    // Button interactions
+    document.querySelectorAll('.share-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        const courseName = button.closest('.course-card').querySelector('h3').textContent;
+        alert(`Share link for "${courseName}" has been copied to clipboard!`);
+        button.innerHTML = '<i class="fas fa-check"></i> Copied!';
+        setTimeout(() => {
+          button.innerHTML = '<i class="fas fa-share-alt"></i> Share';
+        }, 2000);
+      });
+    });
+
+    document.querySelectorAll('.enroll-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        const courseName = button.closest('.course-card').querySelector('h3').textContent;
+        button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+        setTimeout(() => {
+          button.innerHTML = '<i class="fas fa-check"></i> Enrolled!';
+          setTimeout(() => {
+            button.innerHTML = '<i class="fas fa-user-plus"></i> Enroll Now';
+          }, 2000);
+          alert(`Successfully enrolled in "${courseName}"!`);
+        }, 1500);
+      });
+    });
+  </script>
+</body>
+</html>
